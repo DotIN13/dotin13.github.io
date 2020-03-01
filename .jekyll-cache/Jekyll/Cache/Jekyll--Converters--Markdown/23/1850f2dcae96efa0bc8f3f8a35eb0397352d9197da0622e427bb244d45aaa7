@@ -1,4 +1,4 @@
-I"�<blockquote>
+I"j<blockquote>
   <p>离开世界之前，一切都是过程。</p>
 </blockquote>
 
@@ -27,39 +27,39 @@
   <tbody>
     <tr>
       <td>😅</td>
-      <td><code class="highlighter-rouge">PHP</code> <code class="highlighter-rouge">BASIC</code></td>
-      <td><code class="highlighter-rouge">ObjC</code> <code class="highlighter-rouge">Prolog</code> <code class="highlighter-rouge">Hack</code></td>
-      <td><code class="highlighter-rouge">Kotlin</code> <code class="highlighter-rouge">Dart</code></td>
-      <td><code class="highlighter-rouge">Swift</code> <code class="highlighter-rouge">Agda</code> <code class="highlighter-rouge">Idris</code></td>
+      <td><code>PHP</code> <code>BASIC</code></td>
+      <td><code>ObjC</code> <code>Prolog</code> <code>Hack</code></td>
+      <td><code>Kotlin</code> <code>Dart</code></td>
+      <td><code>Swift</code> <code>Agda</code> <code>Idris</code></td>
     </tr>
     <tr>
       <td>🧐</td>
       <td> </td>
-      <td><code class="highlighter-rouge">Asm</code> <code class="highlighter-rouge">C++</code>  <code class="highlighter-rouge">Lisp*</code></td>
-      <td><code class="highlighter-rouge">C++11</code> <code class="highlighter-rouge">C#</code> <code class="highlighter-rouge">AS3</code></td>
-      <td><code class="highlighter-rouge">Scala</code> <code class="highlighter-rouge">Rust</code></td>
+      <td><code>Asm</code> <code>C++</code>  <code>Lisp*</code></td>
+      <td><code>C++11</code> <code>C#</code> <code>AS3</code></td>
+      <td><code>Scala</code> <code>Rust</code></td>
     </tr>
     <tr>
       <td>😏</td>
-      <td><code class="highlighter-rouge">Shell</code></td>
-      <td><code class="highlighter-rouge">C</code> <code class="highlighter-rouge">Java</code> <code class="highlighter-rouge">Python</code></td>
-      <td><code class="highlighter-rouge">Typed JS*</code> <code class="highlighter-rouge">Wasm</code></td>
-      <td><code class="highlighter-rouge">Haskell</code> <code class="highlighter-rouge">Coq</code> <code class="highlighter-rouge">ML*</code></td>
+      <td><code>Shell</code></td>
+      <td><code>C</code> <code>Java</code> <code>Python</code></td>
+      <td><code>Typed JS*</code> <code>Wasm</code></td>
+      <td><code>Haskell</code> <code>Coq</code> <code>ML*</code></td>
     </tr>
     <tr>
       <td>🤓</td>
       <td> </td>
-      <td><code class="highlighter-rouge">JavaScript</code></td>
-      <td><code class="highlighter-rouge">ECMAScript6</code></td>
-      <td><code class="highlighter-rouge">λ</code> <code class="highlighter-rouge">Λ</code> <code class="highlighter-rouge">Π</code> <code class="highlighter-rouge">Σ</code></td>
+      <td><code>JavaScript</code></td>
+      <td><code>ECMAScript6</code></td>
+      <td><code>λ</code> <code>Λ</code> <code>Π</code> <code>Σ</code></td>
     </tr>
   </tbody>
 </table>
 
 <blockquote>
-  <p><strong><code class="highlighter-rouge">ML*</code> 家族</strong>：<code class="highlighter-rouge">OCaml</code> <code class="highlighter-rouge">ReasonML</code> <code class="highlighter-rouge">Standard ML</code><br />
-<strong><code class="highlighter-rouge">Lisp*</code> 家族</strong>：<code class="highlighter-rouge">Clojure</code> <code class="highlighter-rouge">Scheme</code> <code class="highlighter-rouge">Racket</code><br />
-<strong><code class="highlighter-rouge">Typed JS*</code></strong>：<code class="highlighter-rouge">Flow</code> <code class="highlighter-rouge">TypeScript</code></p>
+  <p><strong><code>ML*</code> 家族</strong>：<code>OCaml</code> <code>ReasonML</code> <code>Standard ML</code><br />
+<strong><code>Lisp*</code> 家族</strong>：<code>Clojure</code> <code>Scheme</code> <code>Racket</code><br />
+<strong><code>Typed JS*</code></strong>：<code>Flow</code> <code>TypeScript</code></p>
 </blockquote>
 
 <h5 id="演讲与分享">演讲与分享</h5>
