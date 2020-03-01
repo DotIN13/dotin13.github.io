@@ -1,0 +1,71 @@
+I"}+<h2 id="Project-V">Project V</h2>
+<p>要了解 <code>V2Ray</code> 就必须要知道 <a href="https://github.com/v2ray" rel="external nofollow noopener noreferrer" target="_blank">Project V</a>，根据官方说法：<code>Project V</code>
+    是一个工具集合，它可以帮助你打造专属的基础<strong>通信网络</strong>，<strong>Project V 的核心工具称为 V2Ray</strong>，其主要负责网络协议和功能的实现，与其它
+    <code>Project V</code> 通信，<code>V2Ray</code> 可以单独运行，也可以和其它工具配合，以提供简便的操作流程。</p>
+<p>相对于<code>shadowsocksr</code>来说，它有以下几个优势：</p>
+<ul>
+    <li><strong>多入口多出口</strong>: 一个 <code>V2Ray</code> 进程可并发支持多个入站和出站协议，每个协议可独立工作</li>
+    <li><strong>可定制化路由</strong>: 入站流量可按配置由不同的出口发出。轻松实现按区域或按域名分流，以达到最优的网络性能</li>
+    <li><strong>多协议支持</strong>: V2Ray 可同时支持多个协议，包括
+        <code>Socks</code>、<code>HTTP</code>、<code>Shadowsocks</code>、<code>VMess</code> 等</li>
+    <li><strong>隐蔽性</strong>: V2Ray 的节点可以伪装成正常的网站（HTTPS），将其流量与正常的网页流量混淆，以避开第三方干扰</li>
+    <li><strong>反向代理</strong>: 通用的反向代理支持，可实现内网穿透功能</li>
+    <li><strong>多平台支持</strong>: 原生支持所有常见平台，如 Windows、Mac OS、Linux，并已有第三方支持移动平台</li>
+</ul>
+<h2>安装V2Ray客户端</h2>
+<p>客户端软件在<a href="https://github.com/v2ray/v2ray-core/releases" rel="external nofollow noopener noreferrer" target="_blank">发布页</a>，根据你需要的系统下载匹配型号的安装包，我这里以我的系统为例子，其他系统请自行参照<a href="">官方文档</a>配置。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>pacman <span class="nt">-S</span> v2ray    <span class="c">#ArchLinux/Manjaro安装v2ray</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>配置上可以替换<code>/etc/v2ray/config.json</code>文件，参照以下模板自行修改参数即可，注意修改各注释处；或者可以使用<a href="https://intmainreturn0.com/v2ray-config-gen/" rel="external nofollow noopener noreferrer" target="_blank">配置生成器</a>。</p>
+<details>
+    <summary>config.json示例</summary>
+```json
+    {<br />    "log":{<br />        "loglevel":"warning"<br />    },<br />    "inbound":{<br />        "port":1080,    #本地端口<br />        "listen":"127.0.0.1",<br />        "protocol":"socks",     #网络传输协议<br />        "settings":{<br />            "auth":"noauth",<br />            "udp":true<br />        }<br />    },<br />    "outbounds":[<br />        {<br />            "tag":"proxy",<br />            "protocol":"vmess",<br />            "settings":{<br />                "vnext":[<br />                    #一号服务器<br />                    {<br />                        "address":"139.182.212.71", #IP地址<br />                        "port":32456,   #端口<br />                        "users":[<br />                            {<br />                                "id":"8b9658de-a0s5-408j-a3b3-27a297e4f40b",   #UUID<br />                                "alterId":64<br />                            }<br />                        ]<br />                    },<br />                    #二号服务器（可选）<br />                    {<br />                        "address":"45.77.180.110",<br />                        "port":22071,<br />                        "users":[<br />                            {<br />                                "id":"13e61d3a-9ce7-428d-a7b6-67e9f8e0bf12",<br />                                "alterId":64<br />                            }<br />                        ]<br />                    }<br />                ]<br />            }<br />        }<br />    ],<br />    "policy":{<br />        "levels":{<br />            "0":{<br />                "uplinkOnly":0<br />            }<br />        }<br />    }<br />}
+```
+</details>
+<p><code>V2Ray</code>支持配置多个服务器，那么多个服务器配置的时候，它其实是轮询访问的，也就是说第一个数据包走第一个服务器，第二个数据包走第二个服务器，而不是我们一般认为的第一个服务器被墙了就自动切换到第二个服务器，然后继续传输。
+</p>
+<p>p&gt;路由规则参照 <a href="https://github.com/v2ray/domain-list-community" rel="external nofollow noopener noreferrer" target="_blank">domain-list-community</a> 域名列表，如果该项目中有一整套 <code>google</code> 顶级域名及其子域名，则用 <code>geosite</code> 写成
+<code>geosite:google</code> ，如果是普通网站，则使用 <code>domain</code> 写成 <code>domain:google.com</code>&lt;/p&gt;
+&lt;/details&gt;</p>
+<p>使用<code>v2ray</code>自带了一个检查工具<code>v2ray -test</code>检查<code>json</code>文件</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>v2ray <span class="nt">-test</span> <span class="nt">-config</span> /etc/v2ray/config.json  <span class="c">#检查json&lt;br /&gt;V2Ray 4.18.0 (Po) 20190228&lt;br /&gt;A unified platform for anti-censorship.&lt;br /&gt;Configuration OK.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>显示<code>OK</code>就表示没问题了，可以开启本机的开机自启服务</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>systemctl <span class="nb">enable </span>v2ray  <span class="c">#开机自启v2ray&lt;br /&gt;systemctl start v2ray   #启动v2ray</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2>配置shell代理</h2>
+<p>为了解决终端下载被墙服务器的安装包失败的问题，所以需要让终端也可以翻墙，顺便提升下载速度。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>gedit ~/.bashrc    <span class="c">#编辑.bashrc文件</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>在最后追加以下配置。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">export </span><span class="nv">http_proxy</span><span class="o">=</span><span class="s2">"socks5://127.0.0.1:1080"</span>     <span class="c">#本地端口1080&lt;br /&gt;export https_proxy="socks5://127.0.0.1:1080"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2>配置PAC</h2>
+<p><code>PAC</code>代理需要生成一个<code>.pac</code>的文件，首先本机安装<code>pip</code>工具</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>pacman <span class="nt">-S</span> python-pip       <span class="c">#安装pip&lt;br /&gt;pip -V      #查看pip版本&lt;br /&gt;#-------------------------输出----------------------------&lt;br /&gt;pip 19.0.3 from /usr/lib/python3.7/site-packages/pip (python 3.7)&lt;br /&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>pip <span class="nb">install </span>genpac     <span class="c">#使用pip安装genpac，需要root权限&lt;br /&gt;#-------------------------输出----------------------------&lt;br /&gt;Collecting genpac&lt;br /&gt;  Downloading https://files.pythonhosted.org/packages/48/fb/b8f9cce57c4ea856e7dd1f9fb917df2896d7e62d43c50ed1af2e50a4e57d/genpac-2.1.0.tar.gz (102kB)&lt;br /&gt;     |████████████████████████████████| 112kB 111kB/s &lt;br /&gt;Installing collected packages: genpac&lt;br /&gt;  Running setup.py install for genpac ... done&lt;br /&gt;Successfully installed genpac-2.1.0</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>最后执行以下命令，会生成一个auto.pac文件，无输出结果表示执行成功</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>genpac <span class="nt">--format</span><span class="o">=</span>pac <span class="nt">-o</span> auto.pac <span class="nt">--pac-proxy</span><span class="o">=</span><span class="s2">"SOCKS5 127.0.0.1:1080"</span>&lt;br /&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>然后在系统中配置代理，以我本机的<code>gnome</code>桌面为例，图1、3是PAC代理，引导pac文件的绝对路径<code>file:///etc/v2ray/auto.pac</code>；图2是全局代理，也可以通过以下命令来设置
+</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>gsettings <span class="nb">set </span>org.gnome.system.proxy autoconfig-url file:///etc/v2ray/auto.pac&lt;br /&gt;gsettings <span class="nb">set </span>org.gnome.system.proxy mode <span class="s1">'auto'</span>&lt;br /&gt;&lt;br /&gt;gsettings <span class="nb">set </span>org.gnome.system.proxy.socks host <span class="s1">'127.0.0.1'</span>&lt;br /&gt;gsettings <span class="nb">set </span>org.gnome.system.proxy.socks port 1088
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><img src="https://i.loli.net/2019/06/02/5cf3ad11830e456416.png" alt="" /></p>
+<p><img src="https://i.loli.net/2019/06/02/5cf3ad19058b190157.png" alt="" /></p>
+<p><img src="https://i.loli.net/2019/06/02/5cf3ad1f944f214959.png" alt="" /></p>
+<right>转载自<a href="https://www.teaper.dev/2019/06/02/v2ray/">https://www.teaper.dev/2019/06/02/v2ray/</a></right>
+:ET

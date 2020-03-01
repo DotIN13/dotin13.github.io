@@ -1,0 +1,33 @@
+I"�<h2 id="Project-V">Project V</h2>
+<p>要了解 <code>V2Ray</code> 就必须要知道 <a href="https://github.com/v2ray" rel="external nofollow noopener noreferrer" target="_blank">Project V</a>，根据官方说法：<code>Project V</code>
+    是一个工具集合，它可以帮助你打造专属的基础<strong>通信网络</strong>，<strong>Project V 的核心工具称为 V2Ray</strong>，其主要负责网络协议和功能的实现，与其它
+    <code>Project V</code> 通信，<code>V2Ray</code> 可以单独运行，也可以和其它工具配合，以提供简便的操作流程。</p>
+<p>相对于<code>shadowsocksr</code>来说，它有以下几个优势：</p>
+<ul>
+    <li><strong>多入口多出口</strong>: 一个 <code>V2Ray</code> 进程可并发支持多个入站和出站协议，每个协议可独立工作</li>
+    <li><strong>可定制化路由</strong>: 入站流量可按配置由不同的出口发出。轻松实现按区域或按域名分流，以达到最优的网络性能</li>
+    <li><strong>多协议支持</strong>: V2Ray 可同时支持多个协议，包括
+        <code>Socks</code>、<code>HTTP</code>、<code>Shadowsocks</code>、<code>VMess</code> 等</li>
+    <li><strong>隐蔽性</strong>: V2Ray 的节点可以伪装成正常的网站（HTTPS），将其流量与正常的网页流量混淆，以避开第三方干扰</li>
+    <li><strong>反向代理</strong>: 通用的反向代理支持，可实现内网穿透功能</li>
+    <li><strong>多平台支持</strong>: 原生支持所有常见平台，如 Windows、Mac OS、Linux，并已有第三方支持移动平台</li>
+</ul>
+<h2>安装V2Ray客户端</h2>
+<p>客户端软件在<a href="https://github.com/v2ray/v2ray-core/releases" rel="external nofollow noopener noreferrer" target="_blank">发布页</a>，根据你需要的系统下载匹配型号的安装包，我这里以我的系统为例子，其他系统请自行参照<a href="">官方文档</a>配置。</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>pacman <span class="nt">-S</span> v2ray    <span class="c">#ArchLinux/Manjaro安装v2ray</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>配置上可以替换<code>/etc/v2ray/config.json</code>文件，参照以下模板自行修改参数即可，注意修改各注释处；或者可以使用<a href="https://intmainreturn0.com/v2ray-config-gen/" rel="external nofollow noopener noreferrer" target="_blank">配置生成器</a>。</p>
+<details>
+    <summary>config.json示例</summary>
+```json
+    {<br />    "log":{<br />        "loglevel":"warning"<br />    },<br />    "inbound":{<br />        "port":1080,    #本地端口<br />        "listen":"127.0.0.1",<br />        "protocol":"socks",     #网络传输协议<br />        "settings":{<br />            "auth":"noauth",<br />            "udp":true<br />        }<br />    },<br />    "outbounds":[<br />        {<br />            "tag":"proxy",<br />            "protocol":"vmess",<br />            "settings":{<br />                "vnext":[<br />                    #一号服务器<br />                    {<br />                        "address":"139.182.212.71", #IP地址<br />                        "port":32456,   #端口<br />                        "users":[<br />                            {<br />                                "id":"8b9658de-a0s5-408j-a3b3-27a297e4f40b",   #UUID<br />                                "alterId":64<br />                            }<br />                        ]<br />                    },<br />                    #二号服务器（可选）<br />                    {<br />                        "address":"45.77.180.110",<br />                        "port":22071,<br />                        "users":[<br />                            {<br />                                "id":"13e61d3a-9ce7-428d-a7b6-67e9f8e0bf12",<br />                                "alterId":64<br />                            }<br />                        ]<br />                    }<br />                ]<br />            }<br />        }<br />    ],<br />    "policy":{<br />        "levels":{<br />            "0":{<br />                "uplinkOnly":0<br />            }<br />        }<br />    }<br />}
+```
+</details>
+<p><code>V2Ray</code>支持配置多个服务器，那么多个服务器配置的时候，它其实是轮询访问的，也就是说第一个数据包走第一个服务器，第二个数据包走第二个服务器，而不是我们一般认为的第一个服务器被墙了就自动切换到第二个服务器，然后继续传输。
+</p>
+<p>p&gt;路由规则参照 <a href="https://github.com/v2ray/domain-list-community" rel="external nofollow noopener noreferrer" target="_blank">domain-list-community</a> 域名列表，如果该项目中有一整套 <code>google</code> 顶级域名及其子域名，则用 <code>geosite</code> 写成
+<code>geosite:google</code> ，如果是普通网站，则使用 <code>domain</code> 写成 <code>domain:google.com</code>&lt;/p&gt;
+&lt;/details&gt;</p>
+<p>使用<code>v2ray</code>自带了一个检查工具<code>v2ray -test</code>检查<code>json</code>文件</p>
+:ET
