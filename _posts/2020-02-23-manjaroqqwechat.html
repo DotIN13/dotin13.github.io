@@ -1,0 +1,27 @@
+---
+layout: post
+title: 在Manjaro中优雅地使用QQ与Wechat
+date: '2020-02-23T15:08:00.000+08:00'
+author: DotIN13
+tags:
+modified_time: '2020-02-23T16:16:50.134+08:00'
+blogger_id: tag:blogger.com,1999:blog-7275524089009887162.post-3702675473024617438
+blogger_orig_url: https://dotin13laf.blogspot.com/2020/02/manjaroqqwechat.html
+---
+
+<h2>安装Deepin-QQ与Deepin-Wechat</h2><a href="https://qd.myapp.com/myapp/qqteam/TIM_WEB/img/TIM_PC/index-bg1.png"
+    imageanchor="1"><img border="0" src="https://qd.myapp.com/myapp/qqteam/TIM_WEB/img/TIM_PC/index-bg1.png" width="640"
+        height="250" data-original-width="800" data-original-height="312" /></a>
+<p>在Manjaro中，由于有AUR源、Archlinuxcn源的加持，安装Deepin应用是非常方便的。</p>
+<p>安装微信，只需搜索安装<code>deepin-wine-wechat</code>；安装QQ，只需搜索安装<code>deepin.com.qq.office</code>或者<code>deepin.com.qq.im</code>即可。
+</p>
+<p>安装软件包后，打开软件，按照提示完成进一步的安装配置之后就可使用。</p>
+<p>此处推荐使用Archlinuxcn源的软件包，自带中文界面，安装更为方便。</p>
+<h2>调整界面DPI</h2>
+<p>打开界面发现字体过小，此时需要进入<code>winecfg</code>调整软件的DPI</p><a
+    href="https://2.bp.blogspot.com/-OCIiSXUTOZs/XlIkLfKMGGI/AAAAAAAABEE/y0WHzt-cLWYNG7oj9ynZBdMIzwpdAqx4ACLcBGAsYHQ/s1600/Screenshot%2Bfrom%2B2020-02-23%2B15-02-15.png"
+    imageanchor="1"><img border="0"
+        src="https://2.bp.blogspot.com/-OCIiSXUTOZs/XlIkLfKMGGI/AAAAAAAABEE/y0WHzt-cLWYNG7oj9ynZBdMIzwpdAqx4ACLcBGAsYHQ/s640/Screenshot%2Bfrom%2B2020-02-23%2B15-02-15.png"
+        width="526" height="640" data-original-width="480" data-original-height="584" style="border-radius: 8px" /></a>
+<p>首先完全退出QQ与Wechat。<br>在Terminal输入命令<code>env WINEPREFIX="$HOME/.deepinwine/Deepin-TIM" winecfg</code>以修改TIM的DPI。<br>输入命令<code>env WINEPREFIX="$HOME/.deepinwine/Deepin-QQ" winecfg</code>以修改QQ的DPI。<br>输入命令<code>env WINEPREFIX="$HOME/.deepinwine/Deepin-Wechat" winecfg</code>以修改Wechat的DPI。<br>此处建议将DPI设定在120左右，具体请自行调试。
+</p>
