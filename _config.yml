@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: dotin13@126.com
 description: "Geek - Android, Linux. Politics - America, China. Think Global with DotIN13"
 keyword: "DotIN13, Android, Linux, Politics"
-url: "https://dotin13.github.io"              # your host, for absolute URL
+url: "https://lackawanna-expresso.tk"              # your host, for absolute URL
 baseurl: ""                            # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -38,7 +38,7 @@ anchorjs: true                          # if you want to customize anchor. check
 # from PR#40, to support local preview for Jekyll 3.0
 # make sure you have this gem installed
 # `$ gem install jekyll-paginate`
-plugins: [jekyll-paginate]
+plugins: ["jekyll-paginate","jekyll-sitemap"]
 
 
 
@@ -74,7 +74,7 @@ netease_comment: false
 
 # Google Analytics
 ga_track_id: 'UA-159368053-1'            # Format: UA-xxxxxx-xx
-ga_domain: dotin13.github.io
+ga_domain: lackawanna-expresso.tk
 
 
 
