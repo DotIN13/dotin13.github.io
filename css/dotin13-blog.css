@@ -1920,7 +1920,7 @@ img::-moz-selection {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 1.5em auto 1.6em auto;
+  margin: 1.5em auto 0.5em auto;
 }
 
 /* Hux Optimize UserExperience */
@@ -2056,4 +2056,11 @@ img::-moz-selection {
 .MathJax_SVG_Display {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+a+em {
+  text-align: center;
+  font-size: 0.95em;
+  display: block;
+  margin-bottom: 1em;
 }

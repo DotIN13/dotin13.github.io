@@ -14,8 +14,8 @@ blogger_orig_url: https://dotin13laf.blogspot.com/2020/02/manjaroqqwechat.html
 ---
 
 <h2>安装Deepin-QQ与Deepin-Wechat</h2><a href="https://qd.myapp.com/myapp/qqteam/TIM_WEB/img/TIM_PC/index-bg1.png"
-    imageanchor="1"><img border="0" src="https://qd.myapp.com/myapp/qqteam/TIM_WEB/img/TIM_PC/index-bg1.png" width="640"
-        height="250" data-original-width="800" data-original-height="312" /></a>
+    data-fancybox="gallery" data-caption="QQ-TIM"><img border="0" src="https://qd.myapp.com/myapp/qqteam/TIM_WEB/img/TIM_PC/index-bg1.png" width="640"
+        height="250" data-original-width="800" data-original-height="312" alt="QQ-TIM"/></a>
 <p>在Manjaro中，由于有AUR源、Archlinuxcn源的加持，安装Deepin应用是非常方便的。</p>
 <p>安装微信，只需搜索安装<code>deepin-wine-wechat</code>；安装QQ，只需搜索安装<code>deepin.com.qq.office</code>或者<code>deepin.com.qq.im</code>即可。
 </p>
@@ -23,9 +23,9 @@ blogger_orig_url: https://dotin13laf.blogspot.com/2020/02/manjaroqqwechat.html
 <p>此处推荐使用Archlinuxcn源的软件包，自带中文界面，安装更为方便。</p>
 <h2>调整界面DPI</h2>
 <p>打开界面发现字体过小，此时需要进入<code>winecfg</code>调整软件的DPI</p><a
-    href="https://2.bp.blogspot.com/-OCIiSXUTOZs/XlIkLfKMGGI/AAAAAAAABEE/y0WHzt-cLWYNG7oj9ynZBdMIzwpdAqx4ACLcBGAsYHQ/s1600/Screenshot%2Bfrom%2B2020-02-23%2B15-02-15.png"
-    imageanchor="1"><img border="0"
-        src="https://2.bp.blogspot.com/-OCIiSXUTOZs/XlIkLfKMGGI/AAAAAAAABEE/y0WHzt-cLWYNG7oj9ynZBdMIzwpdAqx4ACLcBGAsYHQ/s640/Screenshot%2Bfrom%2B2020-02-23%2B15-02-15.png"
-        width="526" height="640" data-original-width="480" data-original-height="584" style="border-radius: 8px" /></a>
+    href="/img/in-post/post-deepin-qq/screenshot-1-orig.png"
+    data-fancybox="gallery" data-caption="Wine QQ Configuration"><img border="0"
+        src="/img/in-post/post-deepin-qq/screenshot-1-orig.png"
+        width="526" height="640" data-original-width="480" data-original-height="584" style="border-radius: 8px" alt="wine qq config" /></a><em>Wine QQ Configuration</em>
 <p>首先完全退出QQ与Wechat。<br>在Terminal输入命令<code>env WINEPREFIX="$HOME/.deepinwine/Deepin-TIM" winecfg</code>以修改TIM的DPI。<br>输入命令<code>env WINEPREFIX="$HOME/.deepinwine/Deepin-QQ" winecfg</code>以修改QQ的DPI。<br>输入命令<code>env WINEPREFIX="$HOME/.deepinwine/Deepin-Wechat" winecfg</code>以修改Wechat的DPI。<br>此处建议将DPI设定在120左右，具体请自行调试。
 </p>

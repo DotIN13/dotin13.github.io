@@ -22,7 +22,7 @@
 </footer>
 
 <!-- jQuery -->
-<!--script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script-->
+<!-- script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
@@ -35,7 +35,15 @@
 <!-- Fancybox Javascript -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
+<script>
+$('[data-fancybox="gallery"]').fancybox({
+  buttons : [
+    'download',
+    'thumbs',
+    'close'
+  ]
+});
+</script>
 <!-- Service Worker -->
 {% if site.service-worker %}
 <script src="{{ "/js/snackbar.js " | prepend: site.baseurl }}"></script>
@@ -53,27 +61,6 @@
       s.parentNode.insertBefore(o, s);
     }
 </script>
-
-<!--
-     Because of the native support for backtick-style fenced code blocks
-     right within the Markdown is landed in Github Pages,
-     From V1.6, There is no need for Highlight.js,
-     so Huxblog drops it officially.
-
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
-     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
--->
-<!--
-    <script>
-        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
-            hljs.initHighlightingOnLoad();
-        })
-    </script>
-    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
--->
-
-
 
 {% if page.title == 'Archive' %}
 <!-- jquery.tagcloud.js -->

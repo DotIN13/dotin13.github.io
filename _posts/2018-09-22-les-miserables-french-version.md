@@ -14,8 +14,8 @@ blogger_orig_url: https://dotin13laf.blogspot.com/2018/09/les-miserables-french-
 ---
 
 Still don't know what's the use of updating this but it's just fun to write something, from time to time, which could be very long to you.<br />
-![End of the show](/img/in-post/post-les-miserable/les-miserable.jpg)
-![End of the show](/img/in-post/post-les-miserable/les-miserable-1.jpg)
+<div style="text-align: center;"><a href="/img/in-post/post-les-miserable/les-miserable-orig.jpg" data-fancybox="gallery" data-caption="End of the Show Les Miserable"><img src="/img/in-post/post-les-miserable/les-miserable.jpg" style="display:inline; width:45%"></a>
+<a href="/img/in-post/post-les-miserable/les-miserable-1-orig.jpg" data-fancybox="gallery" data-caption="End of the Show Les Miserable"><img src="/img/in-post/post-les-miserable/les-miserable-1.jpg" style="display:inline; width:45%;"></a><br></div>
 Oh, sorry, there may not be a 'You'.<br /><br />
 ANYWAY.<br /><br />
 Went to watch the French version of Les Miserables this afternoon. Liked it.<br />
