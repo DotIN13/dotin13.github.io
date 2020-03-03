@@ -2064,3 +2064,7 @@ a+em {
   display: block;
   margin-bottom: 1em;
 }
+
+code.hljs{
+  padding: 2em;
+}

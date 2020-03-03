@@ -41,8 +41,7 @@ tmpfs                                     /tmp           tmpfs   defaults,noatim
 
 <h4>本文示例</h4>
 <p>分别将<code>sda1</code>、<code>sda5</code>、<code>sda6</code>、<code>sdb5</code>挂载到<code>/mnt</code>下相应位置</p>
-<pre><code class="bash">
-/dev/sda1                                 /mnt/Stormwind ntfs    defaults         0 0
+<pre><code class="bash">/dev/sda1                                 /mnt/Stormwind ntfs    defaults         0 0
 /dev/sda5                                 /mnt/Karazhan  ntfs    defaults         0 0
 /dev/sda6                                 /mnt/Oregma    ntfs    defaults         0 0
 /dev/sdb5                                 /mnt/Xander    ntfs    defaults         0 0
@@ -72,6 +71,7 @@ tmpfs           1.6G   68K  1.6G   1% /run/user/1000
 <li>根目录必须优先于其他挂载点</li>
 <li>挂载点必须为已经存在的目录</li>
 <li>卸载时必须保证当前磁盘没有发生读写操作</li>
+<li>不建议自动挂载Windows的系统盘</li>
 </ol>
 <h3>方案二:修改<code>/etc/rc.d/rc.local</code>文件</h3>
 <p>将<code>mount</code>命令添加进<code>rc.local</code>文件是另一种实现开机自动挂载的方式</p>
