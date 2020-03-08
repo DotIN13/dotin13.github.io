@@ -10,9 +10,30 @@ tags:
   - MedCram
   - Online Courses
 ---
-Produced by [MedCram.com](https://www.medcram.com/)
-Made by Dr. Roger Seheult
 
 视频深入浅出地讲解了人体细胞中发生的转录与翻译，对理解蛋白质的生产、病原体的入侵有极大的帮助。
 
-<iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=o0930s507wb" height="450" width="100%" allowFullScreen="true"></iframe>
+另外推荐大家关注MedCram的SARS-CoV-2系列视频，非常有学术内涵。
+
+Produced by [MedCram.com](https://www.medcram.com/)  
+Made by Dr. Roger Seheult
+
+<style>
+.aspect-ratio {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+}
+
+.aspect-ratio iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+</style>
+<div class="aspect-ratio">
+<iframe src="//player.bilibili.com/player.html?aid=94446303&cid=161220036&page=1&as_wide=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="450px"> </iframe>
+</div>
