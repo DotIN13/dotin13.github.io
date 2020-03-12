@@ -16,6 +16,19 @@ tags:
   - Coding Pages
 ---
 
+## 核心问题
+
+本篇期望使用简单的方法来帮助解决搭建Jekyll博客时遇到的种种问题，包括：
+
+1. Jekyll: command not found
+2. 从Blogger导入文章
+3. 使用highlight.js
+4. 使用fancybox
+5. 双线部署无法签发证书
+6. 用手机等其他局域网设备测试博客
+
+希望你能借助这篇文章，少走些弯路。
+
 ## 前言
 
 过去一直在`Blogger`自己写一些东西，但`Blogger`总有一些问题使得博客体验不佳：
