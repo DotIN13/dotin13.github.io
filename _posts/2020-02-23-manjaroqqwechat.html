@@ -17,10 +17,10 @@ blogger_orig_url: https://dotin13laf.blogspot.com/2020/02/manjaroqqwechat.html
     data-fancybox="gallery" data-caption="QQ-TIM"><img border="0" src="https://qd.myapp.com/myapp/qqteam/TIM_WEB/img/TIM_PC/index-bg1.png" width="640"
         height="250" data-original-width="800" data-original-height="312" alt="QQ-TIM"/></a>
 <p>在Manjaro中，由于有AUR源、Archlinuxcn源的加持，安装Deepin应用是非常方便的。</p>
-<p>安装微信，只需搜索安装<code>deepin-wine-wechat</code>；安装QQ，只需搜索安装<code>deepin.com.qq.office</code>或者<code>deepin.com.qq.im</code>即可。
+<p>安装微信，只需在AUR中找到并安装<code>deepin-wine-wechat</code>；安装QQ，只需在AUR中找到并安装<code>deepin-wine-tim</code>或者<code>deepin-wine-qq</code>即可。
 </p>
 <p>安装软件包后，打开软件，按照提示完成进一步的安装配置之后就可使用。</p>
-<p>此处推荐使用Archlinuxcn源的软件包，自带中文界面，安装更为方便。</p>
+
 <h2>调整界面DPI</h2>
 <p>打开界面发现字体过小，此时需要进入<code>winecfg</code>调整软件的DPI</p><a
     href="/img/in-post/post-deepin-qq/screenshot-1-orig.png"
@@ -28,4 +28,18 @@ blogger_orig_url: https://dotin13laf.blogspot.com/2020/02/manjaroqqwechat.html
         src="/img/in-post/post-deepin-qq/screenshot-1-orig.png"
         width="526" height="640" data-original-width="480" data-original-height="584" style="border-radius: 8px" alt="wine qq config" /></a><em>Wine QQ Configuration</em>
 <p>首先完全退出QQ与Wechat。<br>在Terminal输入命令<code>env WINEPREFIX="$HOME/.deepinwine/Deepin-TIM" winecfg</code>以修改TIM的DPI。<br>输入命令<code>env WINEPREFIX="$HOME/.deepinwine/Deepin-QQ" winecfg</code>以修改QQ的DPI。<br>输入命令<code>env WINEPREFIX="$HOME/.deepinwine/Deepin-Wechat" winecfg</code>以修改Wechat的DPI。<br>此处建议将DPI设定在120左右，具体请自行调试。
+</p>
+<p>如果使用的是基于deepin-wine的deepin.com.qq.im或者deepin.com.qq.office，则应使用<code>WINEPREFIX=~/.deepinwine/Deepin-QQ deepin-wine winecfg</code>来调整DPI</p>
+
+<h2>解决无法显示图片</h2>
+<p>
+    如遇到聊天图片与头像无法显示，或者始终处于加载中，是因为QQ的图片解析与ipv6不兼容，需要关闭ipv6。
+</p>
+<p>
+    在系统终端中运行命令：
+    <pre><code class="shell">sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1</code></pre>
+
+    注：以上命令在深度Deepin Linux系统下有效，其他Linux发行版可参考。
 </p>

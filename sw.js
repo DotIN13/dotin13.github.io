@@ -20,7 +20,7 @@ const PRECACHE_LIST = [
   "./js/dotin13.min.js",
   "./js/snackbar.js",
   "./img/icon_wechat.png",
-  "./img/avatar-hux.jpg",
+  "./img/orange.webp",
   "./img/home-bg.jpg",
   "./img/404-bg.jpg",
   "./css/dotin13-blog.min.css",
