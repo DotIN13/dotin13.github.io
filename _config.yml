@@ -113,5 +113,9 @@ friends: [
     },{
         title: "练习小册",
         href: "https://lhr.wiki/"
+    },{
+        title: "陆陆侠",
+        href: "https://llx.life/"
     }
+
 ]
