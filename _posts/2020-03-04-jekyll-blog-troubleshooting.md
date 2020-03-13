@@ -42,7 +42,7 @@ tags:
 
 期间遇到非常多的问题，走了不少弯路，几乎把`Google`搜爆。在此，将问题做一个集合总结，建站的诸位可各取所需，绕坑而行。
 
-如果需要完整建站教程，可以移步[qiubaiyin的建站教程](https://github.com/qiubaiying/qiubaiying.github.io/wiki/博客搭建详细教程)以及[双线教程](https://blog.cotes.info/posts/dual-deployment-Jekyll-Blog-on-GithubPages-n-CodingPages/)
+如果需要完整建站教程，可以移步[qiubaiyin的建站教程](https://github.com/qiubaiying/qiubaiying.github.io/wiki/博客搭建详细教程)以及[双线教程](https://blog.cotes.info/posts/dual-deployment-Jekyll-Blog-on-GithubPages-n-CodingPages/)。
 
 ## Command Not Found
 

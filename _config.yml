@@ -58,10 +58,11 @@ kramdown:
     #  start_line: 1
 
 # Gittalk settings
-gittalk_enable: true
+gitalk_clientid: false
+# b4edc9ea059838b0bf4e
 
 # Disqus settings
-disqus_username: false
+disqus_username: dotin13
 
 # Netease settings
 netease_comment: false
@@ -73,8 +74,8 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-159368053-1'            # Format: UA-xxxxxx-xx
-ga_domain: www.wannaexpresso.com
+ga_track_id: "UA-159368053-1"            # Format: UA-xxxxxx-xx
+ga_domain: "www.wannaexpresso.com"
 
 
 

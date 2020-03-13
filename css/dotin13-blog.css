@@ -2067,7 +2067,7 @@ a+em {
 }
 
 /*Highlighter JS*/
-code.hljs{
+code.hljs {
   padding: 2em;
 }
 
@@ -2085,9 +2085,10 @@ code.hljs{
   width: 95%;
 }
 
-@media (min-width: 576px)
-.search-group {
+@media (min-width: 576px) {
+  .search-group {
     width: auto;
+  }
 }
 
 div.search-prepend {
@@ -2122,7 +2123,7 @@ div.search-prepend {
   background-color: #fff;
   border-color: #80bdff;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
 }
 
 #results-container {
@@ -2132,5 +2133,21 @@ div.search-prepend {
 #results-container .search-result {
   padding: 1em 0.5em 0 0;
   display: block;
-  width:100%;
+  width: 100%;
+}
+
+/*video iframe*/
+.video-iframe {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+}
+
+.video-iframe iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }

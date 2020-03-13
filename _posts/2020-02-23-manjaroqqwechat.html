@@ -27,9 +27,17 @@ blogger_orig_url: https://dotin13laf.blogspot.com/2020/02/manjaroqqwechat.html
     data-fancybox="gallery" data-caption="Wine QQ Configuration"><img border="0"
         src="/img/in-post/post-deepin-qq/screenshot-1-orig.png"
         width="526" height="640" data-original-width="480" data-original-height="584" style="border-radius: 8px" alt="wine qq config" /></a><em>Wine QQ Configuration</em>
-<p>首先完全退出QQ与Wechat。<br>在Terminal输入命令<code>env WINEPREFIX="$HOME/.deepinwine/Deepin-TIM" winecfg</code>以修改TIM的DPI。<br>输入命令<code>env WINEPREFIX="$HOME/.deepinwine/Deepin-QQ" winecfg</code>以修改QQ的DPI。<br>输入命令<code>env WINEPREFIX="$HOME/.deepinwine/Deepin-Wechat" winecfg</code>以修改Wechat的DPI。<br>此处建议将DPI设定在120左右，具体请自行调试。
+<p>首先完全退出QQ与Wechat。<br>在Terminal输入命令
+    <pre><code class="shell">env WINEPREFIX="$HOME/.deepinwine/Deepin-TIM" winecfg #修改TIM的DPI
+env WINEPREFIX="$HOME/.deepinwine/Deepin-QQ" winecfg #修改QQ的DPI
+env WINEPREFIX="$HOME/.deepinwine/Deepin-Wechat" winecfg #修改Wechat的DPI</code></pre>
+        此处建议将DPI设定在120左右，具体请自行调试。
 </p>
-<p>如果使用的是基于deepin-wine的deepin.com.qq.im或者deepin.com.qq.office，则应使用<code>WINEPREFIX=~/.deepinwine/Deepin-QQ deepin-wine winecfg</code>来调整DPI</p>
+<p>如果使用的是基于deepin-wine的deepin.com.qq.im或者deepin.com.qq.office，则应使用
+    <pre><code class="shell">WINEPREFIX=~/.deepinwine/Deepin-QQ deepin-wine winecfg #修改QQ的DPI
+WINEPREFIX=~/.deepinwine/Deepin-TIM deepin-wine winecfg #修改TIM的DPI</code></pre>
+    来调整DPI。
+</p>
 
 <h2>解决无法显示图片</h2>
 <p>
