@@ -16,6 +16,9 @@ blogger_orig_url: https://dotin13laf.blogspot.com/2020/02/3-things-that-keep-bar
 <a href="/img/in-post/post-obama-singapore/Barack-Obama-Singapore.jpg" data-fancybox="gallery" data-caption="Former U.S. President Barack Obama | Sean Gallup | Getty Images"><img src="/img/in-post/post-obama-singapore/Barack-Obama-Singapore.jpg" alt="Former U.S. President Barack Obama | Sean Gallup | Getty Images"></a>
 *Former U.S. President Barack Obama | Sean Gallup | Getty Images*
 
+翻译：DotIN13  
+校对：天佑
+
 What three things keep Barack Obama up at night?  
 哪三件事让Barack Obama夜不能寐？
 
