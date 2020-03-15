@@ -1,0 +1,11 @@
+Sitemap: https://www.wannaexpresso.com/sitemap.xml
+
+User-agent: *
+Disallow: /search.json
+
+User-agent: Baiduspider
+Disallow: /page*
+Disallow: /archive*
+Disallow: /404.html
+Disallow: /search.json
+Disallow: /offline.html
