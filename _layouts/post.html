@@ -51,13 +51,15 @@ layout: default
                 <hr style="visibility: hidden;">
 
                 {% if site.valine_appid %}
+                <!-- valine 评论框 start -->
                 <div id="vcomments"></div>
+                <!-- valine 评论框 end -->
                 {% endif %}
 
                 {% if site.gitalk_clientid %}
-                <!-- gittalk 评论框 start -->
+                <!-- gitalk 评论框 start -->
                 <div id="gitalk-container"></div>
-                <!-- gittalk 评论框 end -->
+                <!-- gitalk 评论框 end -->
                 {% endif %}
 
                 {% if site.disqus_username %}

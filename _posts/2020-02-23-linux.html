@@ -12,10 +12,10 @@ blogger_id: tag:blogger.com,1999:blog-7275524089009887162.post-39320289907721589
 blogger_orig_url: https://dotin13laf.blogspot.com/2020/02/linux.html
 ---
 
-<h2>开机自动挂载的两种方案</h2>
+<h2>开机自动挂载</h2>
 <p>在给系统新增了磁盘以后，如果重启系统我们会发现找不到存储；但是使用<code>fdisk -l</code>可以看到存储空间，说明存储还在。这是因为关机后，挂载已经自动卸载掉了。我们当然可以手动再次将其挂载，但如果每次重启都需要这样手动操作会很不方便。因此我们可以利用自动挂载，这样系统每次开机的时候就可以自动将磁盘挂载上去了。</p>
 
-<h3>方案一:修改<code>/etc/fstab</code>文件</h3>
+<h3>修改<code>/etc/fstab</code>文件</h3>
 <p>用<code>vim</code>或者<code>nano</code>打开<code>/etc/fstab</code>可以看到如下内容：</p>
 <pre><code class="bash"># /etc/fstab: static file system information.
 #
@@ -40,14 +40,13 @@ tmpfs                                     /tmp           tmpfs   defaults,noatim
 第6列设置是否开机的时候使用<code>fsck</code>检验所挂载的磁盘，置0为不检验，置1，2为检验，但置2盘比置1的盘晚检验。</p>
 
 <h4>本文示例</h4>
-<p>分别将<code>sda1</code>、<code>sda5</code>、<code>sda6</code>、<code>sdb5</code>挂载到<code>/mnt</code>下相应位置</p>
-<pre><code class="bash">/dev/sda1                                 /mnt/Stormwind ntfs    defaults         0 0
-/dev/sda5                                 /mnt/Karazhan  ntfs    defaults         0 0
-/dev/sda6                                 /mnt/Oregma    ntfs    defaults         0 0
-/dev/sdb5                                 /mnt/Xander    ntfs    defaults         0 0
-</code></pre>
+<p>将<code>/dev/sda5</code>挂载到<code>/mnt/Karazhan</code></p>
+<p>首先使用<code>sudo blkid /dev/sda5</code>命令查看设备UUID，获得输出如下：</p>
+<pre><code class="shell">/dev/sda5: LABEL="Karazhan" BLOCK_SIZE="512" UUID="8EF257AE5A2BABB0" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="ce11e894-ece4-4c1e-a358-e85789be0b58"</code></pre>
+<p>得知<code>/dev/sda5</code>的UUID为8EF257AE5A2BABB0，利用nano/vim/gedit编辑<code>/etc/fstab</code>，在文件最后添加如下代码：</p>
+<pre><code class="shell">UUID=8EF257AE5A2BABB0                     /mnt/Karazhan  ntfs    defaults         0 0</code></pre>
 
-<p>将上面的命令添加进<code>fstab</code>后，为了避免可能的错误，我们可以使用<code>mount -a</code>命令来检验编辑的内容是否有错。执行<code>mount -a</code>命令后，用<code>df -h</code>命令查看会发现磁盘已经挂载成功，说明输入没有错误。下次重启的时候系统就可以自动进行挂载了。</p>
+<p>将上面的命令添加进<code>fstab</code>后，为了避免可能的错误，我们可以使用<code>sudo mount -a</code>命令来检验编辑的内容是否有错。执行<code>sudo mount -a</code>命令后，用<code>df -h</code>命令查看会发现磁盘已经挂载成功，说明输入没有错误。下次重启的时候系统就可以自动进行挂载了。</p>
 <pre><code class="bash"><font color="#00AA00"><b>[dotin13@Manhattan</b></font><font color="#AAAAAA"><b> ~</b></font><font color="#00AA00"><b>]$</b></font> df -h
 Filesystem      Size  Used Avail Use% Mounted on
 dev             7.8G     0  7.8G   0% /dev
@@ -56,11 +55,8 @@ run             7.8G  1.7M  7.8G   1% /run
 tmpfs           7.8G   85M  7.7G   2% /dev/shm
 tmpfs           7.8G     0  7.8G   0% /sys/fs/cgroup
 tmpfs           7.8G  105M  7.7G   2% /tmp
-/dev/sda6       128G  107G   22G  84% /mnt/Oregma
 /dev/sda5       211G  180G   31G  86% /mnt/Karazhan
-/dev/sda1       127G   95G   32G  75% /mnt/Stormwind
 /dev/sda3       200M   36M  164M  18% /boot/efi
-/dev/sdb5       133G   58G   76G  44% /mnt/Xander
 /dev/sdb3        58G   29G   27G  53% /home
 tmpfs           1.6G   20K  1.6G   1% /run/user/120
 tmpfs           1.6G   68K  1.6G   1% /run/user/1000
@@ -71,11 +67,7 @@ tmpfs           1.6G   68K  1.6G   1% /run/user/1000
 <li>根目录必须优先于其他挂载点</li>
 <li>挂载点必须为已经存在的目录</li>
 <li>卸载时必须保证当前磁盘没有发生读写操作</li>
-<li>不建议自动挂载Windows的系统盘</li>
+<li>不建议使用/dev/sda5的形式代替UUID，因为多硬盘的设备中，每次开机时设备号可能不同，导致无法开机</li>
 </ol>
-<h3>方案二:修改<code>/etc/rc.d/rc.local</code>文件</h3>
-<p>将<code>mount</code>命令添加进<code>rc.local</code>文件是另一种实现开机自动挂载的方式</p>
-<pre><code class="bash">mount /dev/sda1 /mnt/Stormwind
-</code></pre>
-
-<footer>转载自<a href="https://blog.csdn.net/buxiaoxindasuile/article/details/49612867">https://blog.csdn.net/buxiaoxindasuile/article/details/49612867</a></footer>
+<p>参考：<a href="https://askubuntu.com/questions/711016/slow-boot-a-start-job-is-running-for-dev-disk-by">显示“A start job is running for /dev/sdx”，无法开机。</a><br>
+    原载：<a href="https://blog.csdn.net/buxiaoxindasuile/article/details/49612867">CSDN Blog</a>，有修改。</p>
