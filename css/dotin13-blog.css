@@ -770,7 +770,7 @@ blockquote p {
 }
 
 blockquote.g_bq {
-  font: italic 600 44px EB Garamond, serif;
+  font: italic 600 24px EB Garamond, serif;
   font-style: italic;
   quotes: '\201c''\201d''\2018''\2019';
   display: block;
@@ -780,6 +780,12 @@ blockquote.g_bq {
   margin-inline-end: 40px;
   color: #282828;
   border: none;
+}
+
+@media (min-width: 768px) {
+  blockquote.g_bq {
+    font: italic 600 44px EB Garamond, serif;
+  }
 }
 
 blockquote.g_bq::before {
