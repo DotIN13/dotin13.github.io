@@ -57,16 +57,19 @@ kramdown:
     #  line_numbers: true
     #  start_line: 1
 
-# Gittalk settings
+# Gitalk settings
 gitalk_clientid: false
 # b4edc9ea059838b0bf4e
 
 # Disqus settings
-disqus_username: dotin13
+disqus_username: false
 
 # Netease settings
 netease_comment: false
 
+# Valine settings
+valine_appid: "PSy1tmiW2mx0DpKo7psk67EN-9Nh9j0Va"
+valine_apikey: "MskLH2QYVC2Kqj8aG3XJ7x7o"
 
 
 # Analytics settings
