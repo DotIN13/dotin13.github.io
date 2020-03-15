@@ -3,6 +3,8 @@ layout: post
 title: 3 Things That Keep Barack Obama Up at Night
 subtitle: 哪三件事让Barack Obama夜不能寐？
 date: '2020-02-02T15:58:00.001+08:00'
+onTop: true
+lang: en
 author: DotIN13
 tags:
 - Barack Obama
