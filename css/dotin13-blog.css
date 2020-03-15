@@ -2184,10 +2184,14 @@ div.search-prepend {
 }
 
 /*valine comment*/
-.v .vwrap .vheader .vinput {
+#vcomments.v .vwrap .vheader .vinput {
   border-bottom: 1px solid #dedede;
 }
 
-.v .vwrap {
+#vcomments.v .vwrap .vheader .vinput:focus {
+  border-bottom: 1px solid #eb5055;
+}
+
+#vcomments.v .vwrap {
   border-color: #ddd;
 }
