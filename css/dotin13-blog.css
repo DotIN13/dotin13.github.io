@@ -1443,14 +1443,14 @@ samp {
   color: #0085a1;
 }
 
-.post-preview>a>.post-title {
+.post-preview>a .post-title {
   font-size: 21px;
   line-height: 1.3;
   margin-top: 30px;
   margin-bottom: 8px;
 }
 
-.post-preview>a>.post-subtitle {
+.post-preview>a .post-subtitle {
   font-size: 15px;
   line-height: 1.3;
   margin: 0;
@@ -1478,7 +1478,7 @@ samp {
 }
 
 @media only screen and (min-width: 768px) {
-  .post-preview>a>.post-title {
+  .post-preview>a .post-title {
     font-size: 26px;
     line-height: 1.3;
     margin-bottom: 10px;
@@ -2150,4 +2150,29 @@ div.search-prepend {
   height: 100%;
   left: 0;
   top: 0;
+}
+
+/*post on top*/
+.ontop-pushpin {
+  display: inline;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  padding: .2rem .75rem .15rem .75rem;
+  margin-right: .5rem;
+  border-radius: .25em;
+  top: -2px;
+  font-size: 14px;
+}
+
+.ontop-title-group {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .ontop-pushpin {
+    padding: 0.275rem 0.75rem 0.175rem 0.75rem;
+    top: -3px;
+  }
 }
