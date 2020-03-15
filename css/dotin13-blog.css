@@ -2182,3 +2182,12 @@ div.search-prepend {
     top: -3px;
   }
 }
+
+/*valine comment*/
+.v .vwrap .vheader .vinput {
+  border-bottom: 1px solid #dedede;
+}
+
+.v .vwrap {
+  border-color: #ddd;
+}
