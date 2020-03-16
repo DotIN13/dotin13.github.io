@@ -4,6 +4,10 @@ description: "Two spoons of sugar, please..."
 noindex: true
 ---
 
+{% if paginator.page == 1 %}
+{% include ncov.html %}
+{% endif %}
+
 {% for post in site.posts %}
 {% if post.onTop == true %}
 <div class="post-preview">
