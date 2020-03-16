@@ -41,6 +41,11 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
+    {% if page.noindex and paginator.page != 1 %}
+    <!-- noindex -->
+    <meta name="robots" content="noindex" />
+    {% endif %}
+
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
 
