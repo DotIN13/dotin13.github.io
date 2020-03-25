@@ -3,7 +3,6 @@ layout: post
 title: 3 Things That Keep Barack Obama Up at Night
 subtitle: 哪三件事让Barack Obama夜不能寐？
 date: '2020-02-02T15:58:00.001+08:00'
-onTop: true
 lang: en
 author: DotIN13
 tags:
@@ -59,7 +58,7 @@ But things started to change after the financial crisis of 2008.
 “然后那些败者会开始感觉有如困兽，”他说。
 
 Cultural disruptions in the Middle East, Asia and U.S. were also a factor, he said. “People who had traditional cultures felt as if those traditional arrangements were under assault.”  
-中东、亚洲与美国的文化混乱也同样是一大因素，他说道。“依仗传统文化的人们感觉那些传统的规制好像在遭到破坏。”
+中东、亚洲与美国的文化混乱也同样是一大因素，他说道。“有着传统文化的人们感觉那些传统的规制好像在遭到破坏。”
 
 “And, as a consequence, what you start seeing is this populist backlash — sometimes from the left, more often from the right — and a fallback to tribalism, racism, misogyny, ethnic or sectarian conflicts and strong men who would come in and oftentimes exploit some of those divisions.”  
 “结果就是，你开始看到民粹主义的反扑——有时来自左翼，更多的时候来自右翼——以及向宗族主义、种族歧视、反女性主义、种族宗派冲突的退化，还有那些会插手其中并且常常利用个中分歧谋利的社会精英。
