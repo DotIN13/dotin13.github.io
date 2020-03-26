@@ -9,10 +9,5 @@
       "status": 404,
       "dest": "/404.html"
     }
-  ],
-  "regions": [
-    "hnd1",
-    "sfo1",
-    "sin1"
   ]
 }
