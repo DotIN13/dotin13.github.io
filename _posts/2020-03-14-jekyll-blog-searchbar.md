@@ -32,6 +32,20 @@ Hux在创作主题的时候使用的是`Bootstrap 3.3`，于是便想利用便�
 
 但——我解决不了，因为我的liquid知识实在太少。最后，折衷的办法是，从不存在这一bug的旧版的Hux Blog主题中拷贝代码，最后的结果就是侧边栏的tags不能再自动排序。
 
+> Edit：这一问题在最新的Hux Blog主题中已经由Hux修复，解决的方法是将_includes/featured-tags.html中的部分代码修改为：
+>
+> ```html
+> {% raw %}
+> ...
+> <a>...</a>__SEPARATOR__
+> {% endif %}{% endfor %}
+> {% endcapture %}
+> {{ tags | split:'__SEPARATOR__' | sort }}
+> {% endraw %}
+> ```
+>
+> 具体的做法请参阅Hux Blog的Commits。
+
 解决了这一问题之后，便着手编写搜索框的代码。结构很简单，一个`<div>`里装着搜索glyph，一个`<input>`用于输入。我想像Bootstrap Docs一样使得左边的`<div>`与右边的`<input>`同高，但始终做不到，传统的`display: inline-block`写法在PC上同高，但到了移动设备上又不同高了。查阅资料发现，要让两者同高，得采用`display: flex`的方式，让两个元素同处一个限位`<div>`之中，并以盒模型的方式显示，才能够让两者真正保持统一高度。
 
 于是，就有了以下的的代码：
